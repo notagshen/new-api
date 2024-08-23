@@ -36,12 +36,17 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+
       - name: Extract metadata (tags, labels) for Docker
         id: meta
         uses: docker/metadata-action@v4
         with:
           images: |
             notagshen/new-api
+          tags: |
+            latest
+          labels: |
+            org.opencontainers.image.source=${{ github.repositoryUrl }}
             
       - name: Build and push Docker images
         uses: docker/build-push-action@v3
