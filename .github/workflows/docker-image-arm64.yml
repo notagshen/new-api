@@ -41,7 +41,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            pengzhile/new-api
+            notagshen/new-api
             
       - name: Build and push Docker images
         uses: docker/build-push-action@v3
